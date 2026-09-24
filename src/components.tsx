@@ -73,5 +73,5 @@ export function TermCard({ japanese, roman, meaning, detail, index }: {
 }
 
 export function Annotation({ children }: { children: ReactNode }) {
-  return <div className="annotation"><span className="annotation-label">CATATAN AKADEMIK</span><span>{children}</span></div>;
+  return <div className="annotation"><span className="annotation-label">NOTE</span><span>{children}</span></div>;
 }
