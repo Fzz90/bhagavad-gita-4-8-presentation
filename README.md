@@ -2,6 +2,8 @@
 
 Presentasi web React + TypeScript tentang teks Jepang halaman 316–318: isi ayat dan komentar, transliterasi ilmiah IAST, serta istilah non-Jepang. Ada 18 slide, navigasi keyboard, animasi horizontal, glosarium yang dapat dipilih, catatan pembicara, dan foto halaman sumber.
 
+**Presentasi:** https://fzz90.github.io/bhagavad-gita-4-8-presentation/
+
 ## Menjalankan
 
 ```bash
@@ -34,9 +36,7 @@ Kartu agenda dapat diklik untuk melompat ke bagian tertentu. Istilah pada slide 
 
 ## GitHub Pages
 
-1. Buat repository GitHub baru dan unggah isi folder proyek ini ke branch `main`.
-2. Buka **Settings → Pages → Build and deployment → Source** dan pilih **GitHub Actions**.
-3. Workflow `.github/workflows/deploy.yml` akan menjalankan `npm ci`, `npm run build`, lalu menerbitkan `dist/` pada setiap push ke `main`.
+Repository ini menerbitkan presentasi melalui GitHub Actions. Workflow `.github/workflows/deploy.yml` menjalankan `npm ci`, `npm run build`, lalu menerbitkan `dist/` pada setiap push ke `main`.
 
 ## Catatan sumber
 
