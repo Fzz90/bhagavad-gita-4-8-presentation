@@ -54,7 +54,7 @@ function ContextSlide({ onSource }: SlideProps) {
 }
 
 function VerseSlide({ onSource }: SlideProps) {
-  return <SlideFrame number="05" section="Ayat 4.8" title={<><ruby>第八節<rt>だいはっせつ</rt></ruby> / Bhagavad-gītā 4.8</>} subtitle="Ayat dasar yang dijelaskan lebih lanjut pada halaman 316–318." page={316} onSource={onSource}>
+  return <SlideFrame number="05" section="Ayat 4.8" title={<><ruby>第八節<rt>だいはっせつ</rt></ruby> / Bhagavad-gītā 4.8</>} page={316} onSource={onSource}>
     <div className="verse-layout"><div className="verse-japanese"><SourceBadge kind="gita"/><p lang="ja"><ruby>正信正行<rt>しょうしんしょうぎょう</rt></ruby>の<ruby>人々<rt>ひとびと</rt></ruby>を<ruby>救<rt>たす</rt></ruby>け<br/><ruby>異端邪信<rt>いたんじゃしん</rt></ruby>のともがらを<ruby>打<rt>う</rt></ruby>ち<ruby>倒<rt>たお</rt></ruby>し<br/><ruby>宗教<rt>しゅうきょう</rt></ruby>の<ruby>法則<rt>ほうそく</rt></ruby>を<ruby>再<rt>ふたた</rt></ruby>び<ruby>世<rt>よ</rt></ruby>に<ruby>興<rt>おこ</rt></ruby>すために<br/><ruby>私<rt>わたし</rt></ruby>は、どの<ruby>時代<rt>じだい</rt></ruby>にも<ruby>降臨<rt>こうりん</rt></ruby>する。</p><small>Terjemahan Jepang yang tercetak pada hlm. 316</small></div><div className="verse-roman"><div className="verse-lines">paritrāṇāya sādhūnāṁ<br/>vināśāya ca duṣkṛtām<br/>dharma-saṁsthāpanārthāya<br/>sambhavāmi yuge yuge</div><p>Melindungi orang saleh · mengatasi pelaku kejahatan · menegakkan kembali dharma.</p><small>IAST / Bhagavad-gītā 4.8 · terjemahan Indonesia berupa parafrasa</small></div></div>
     <div className="verse-points"><span>01 MELINDUNGI</span><span>02 MENGATASI KEJAHATAN</span><span>03 MENEGAKKAN DHARMA</span></div>
   </SlideFrame>;
