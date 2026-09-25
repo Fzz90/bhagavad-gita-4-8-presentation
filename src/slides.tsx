@@ -42,7 +42,7 @@ function AgendaSlide({ onJump }: SlideProps) {
   ] as const;
   return <SlideFrame number="03" section="Rute pembacaan" title="Agenda pembahasan" subtitle="Empat pintu masuk untuk membaca satu ayat dan komentarnya.">
     <div className="agenda-grid">{items.map(([n, name, desc, target]) => <button type="button" className="agenda-item" key={n} onClick={() => onJump(target)}><span>{n}</span><strong>{name}</strong><small>{desc}</small><ChevronRight size={24}/></button>)}</div>
-    <div className="process-ribbon"><span lang="ja">日本語</span><ArrowRight/><span>Katakana</span><ArrowRight/><span>IAST</span><ArrowRight/><span>Makna</span><ArrowRight/><span>Konsep</span></div>
+    <div className="process-ribbon"><span lang="ja"><ruby>日本語<rt>にほんご</rt></ruby></span><ArrowRight/><span>Katakana</span><ArrowRight/><span>IAST</span><ArrowRight/><span>Makna</span><ArrowRight/><span>Konsep</span></div>
   </SlideFrame>;
 }
 
@@ -54,8 +54,8 @@ function ContextSlide({ onSource }: SlideProps) {
 }
 
 function VerseSlide({ onSource }: SlideProps) {
-  return <SlideFrame number="05" section="Ayat 4.8" title="第八節 / Bhagavad-gītā 4.8" subtitle="Ayat dasar yang dijelaskan lebih lanjut pada halaman 316–318." page={316} onSource={onSource}>
-    <div className="verse-layout"><div className="verse-japanese"><SourceBadge kind="gita"/><p lang="ja">正信正行の人々を救け<br/>異端邪信のともがらを打ち倒し<br/>宗教の法則を再び世に興すために<br/>私は、どの時代にも降臨する。</p><small>Terjemahan Jepang yang tercetak pada hlm. 316</small></div><div className="verse-roman"><div className="verse-lines">paritrāṇāya sādhūnāṁ<br/>vināśāya ca duṣkṛtām<br/>dharma-saṁsthāpanārthāya<br/>sambhavāmi yuge yuge</div><p>Melindungi orang saleh · mengatasi pelaku kejahatan · menegakkan kembali dharma.</p><small>IAST / Bhagavad-gītā 4.8 · terjemahan Indonesia berupa parafrasa</small></div></div>
+  return <SlideFrame number="05" section="Ayat 4.8" title={<><ruby>第八節<rt>だいはっせつ</rt></ruby> / Bhagavad-gītā 4.8</>} subtitle="Ayat dasar yang dijelaskan lebih lanjut pada halaman 316–318." page={316} onSource={onSource}>
+    <div className="verse-layout"><div className="verse-japanese"><SourceBadge kind="gita"/><p lang="ja"><ruby>正信正行<rt>しょうしんしょうぎょう</rt></ruby>の<ruby>人々<rt>ひとびと</rt></ruby>を<ruby>救<rt>たす</rt></ruby>け<br/><ruby>異端邪信<rt>いたんじゃしん</rt></ruby>のともがらを<ruby>打<rt>う</rt></ruby>ち<ruby>倒<rt>たお</rt></ruby>し<br/><ruby>宗教<rt>しゅうきょう</rt></ruby>の<ruby>法則<rt>ほうそく</rt></ruby>を<ruby>再<rt>ふたた</rt></ruby>び<ruby>世<rt>よ</rt></ruby>に<ruby>興<rt>おこ</rt></ruby>すために<br/><ruby>私<rt>わたし</rt></ruby>は、どの<ruby>時代<rt>じだい</rt></ruby>にも<ruby>降臨<rt>こうりん</rt></ruby>する。</p><small>Terjemahan Jepang yang tercetak pada hlm. 316</small></div><div className="verse-roman"><div className="verse-lines">paritrāṇāya sādhūnāṁ<br/>vināśāya ca duṣkṛtām<br/>dharma-saṁsthāpanārthāya<br/>sambhavāmi yuge yuge</div><p>Melindungi orang saleh · mengatasi pelaku kejahatan · menegakkan kembali dharma.</p><small>IAST / Bhagavad-gītā 4.8 · terjemahan Indonesia berupa parafrasa</small></div></div>
     <div className="verse-points"><span>01 MELINDUNGI</span><span>02 MENGATASI KEJAHATAN</span><span>03 MENEGAKKAN DHARMA</span></div>
   </SlideFrame>;
 }
@@ -77,7 +77,7 @@ function TransliterationSlide({ onSource }: SlideProps) {
 
 function Page316Slide({ onSource }: SlideProps) {
   return <SlideFrame number="07" section="Halaman 316" title="Sādhu, dharma, dan tujuan kemunculan" subtitle="Dari isi ayat menuju cara komentar menafsirkan tujuannya." page={316} onSource={onSource}>
-    <QuoteCard japanese="神の化身たちの全目的は、人々のクリシュナ意識を目覚めさせることである。" translation="Tujuan semua manifestasi Tuhan adalah membangkitkan kesadaran Kṛṣṇa dalam diri manusia." page={316} onSource={onSource}/>
+    <QuoteCard japanese={<><ruby>神<rt>かみ</rt></ruby>の<ruby>化身<rt>けしん</rt></ruby>たちの<ruby>全目的<rt>ぜんもくてき</rt></ruby>は、<ruby>人々<rt>ひとびと</rt></ruby>のクリシュナ<ruby>意識<rt>いしき</rt></ruby>を<ruby>目覚<rt>めざ</rt></ruby>めさせることである。</>} translation="Tujuan semua manifestasi Tuhan adalah membangkitkan kesadaran Kṛṣṇa dalam diri manusia." page={316} onSource={onSource}/>
     <div className="two-term-row"><TermCard index="01 / AYAT" japanese="サードゥ" roman="sādhu" meaning="Orang saleh / praktisi spiritual" detail="Pada ayat: pihak yang dilindungi."/><TermCard index="02 / AYAT" japanese="ドゥシュクリターン" roman="duṣkṛtām" meaning="Para pelaku perbuatan buruk" detail="duṣ- (buruk) + √kṛ (melakukan); bentuk dalam ayat."/></div>
     <Annotation>“Kesadaran Kṛṣṇa” adalah penekanan teologis komentar Vaiṣṇava pada halaman ini. Jangan sajikan sebagai satu-satunya tafsir seluruh tradisi Hindu.</Annotation>
   </SlideFrame>;
@@ -85,8 +85,8 @@ function Page316Slide({ onSource }: SlideProps) {
 
 function Page317Slide({ onSource }: SlideProps) {
   return <SlideFrame number="08" section="Halaman 317" title="Perlindungan yang bersifat personal" subtitle="Komentar mengutamakan penghiburan para penyembah, selain penindakan terhadap kejahatan." page={317} onSource={onSource}>
-    <QuoteCard japanese="純粋な献身者たちを慰め満足させるために降臨なさる" translation="Ia turun untuk menghibur dan memuaskan para penyembah yang murni." page={317} onSource={onSource}/>
-    <div className="lexicon"><span><b lang="ja">純粋な</b><small>murni</small></span><span><b lang="ja">献身者</b><small>penyembah</small></span><span><b lang="ja">慰める</b><small>menghibur</small></span><span><b lang="ja">満足させる</b><small>memuaskan</small></span><span><b lang="ja">降臨する</b><small>turun secara ilahi</small></span></div>
+    <QuoteCard japanese={<><ruby>純粋<rt>じゅんすい</rt></ruby>な<ruby>献身者<rt>けんしんしゃ</rt></ruby>たちを<ruby>慰<rt>なぐさ</rt></ruby>め<ruby>満足<rt>まんぞく</rt></ruby>させるために<ruby>降臨<rt>こうりん</rt></ruby>なさる</>} translation="Ia turun untuk menghibur dan memuaskan para penyembah yang murni." page={317} onSource={onSource}/>
+    <div className="lexicon"><span><b lang="ja"><ruby>純粋<rt>じゅんすい</rt></ruby>な</b><small>murni</small></span><span><b lang="ja"><ruby>献身者<rt>けんしんしゃ</rt></ruby></b><small>penyembah</small></span><span><b lang="ja"><ruby>慰<rt>なぐさ</rt></ruby>める</b><small>menghibur</small></span><span><b lang="ja"><ruby>満足<rt>まんぞく</rt></ruby>させる</b><small>memuaskan</small></span><span><b lang="ja"><ruby>降臨<rt>こうりん</rt></ruby>する</b><small>turun secara ilahi</small></span></div>
     <div className="big-idea"><span>AVATĀRA</span><ArrowRight/><span>PERLINDUNGAN</span><ArrowRight/><span>PENGHIBURAN</span></div>
   </SlideFrame>;
 }
@@ -94,7 +94,7 @@ function Page317Slide({ onSource }: SlideProps) {
 function CharactersSlide({ onSource }: SlideProps) {
   return <SlideFrame number="09" section="Narasi" title="Ketika perlindungan menjadi konkret" subtitle="Dua contoh naratif dalam komentar halaman 317." page={317} onSource={onSource}>
     <div className="characters-grid"><div className="character-card"><span className="eyebrow">KISAH 01</span><strong>Prahlāda</strong><span className="japanese-term" lang="ja">プラフラーダ</span><p>Penyembah yang dianiaya oleh ayahnya, <em>Hiraṇyakaśipu</em> (ヒラニャカシプ).</p><span className="card-bottom">IMAN DI TENGAH PENGANIAYAAN</span></div><div className="character-card"><span className="eyebrow">KISAH 02</span><strong>Devakī</strong><span className="japanese-term" lang="ja">デーヴァキー</span><p>Bersama <em>Vasudeva</em> (ヴァスデーヴァ), ia mengalami penganiayaan dari <em>Kaṁsa</em> (カンサ).</p><span className="card-bottom">PERLINDUNGAN PENYEMBAH</span></div></div>
-    <QuoteCard japanese="デーヴァキーを救けるために、出現されたのである。" translation="[Kṛṣṇa] muncul demi menyelamatkan Devakī." page={317} onSource={onSource} compact/>
+    <QuoteCard japanese={<>デーヴァキーを<ruby>救<rt>たす</rt></ruby>けるために、<ruby>出現<rt>しゅつげん</rt></ruby>されたのである。</>} translation="[Kṛṣṇa] muncul demi menyelamatkan Devakī." page={317} onSource={onSource} compact/>
   </SlideFrame>;
 }
 
@@ -108,8 +108,8 @@ function BengaliSlide({ onSource }: SlideProps) {
 function Page318Slide({ onSource }: SlideProps) {
   return <SlideFrame number="11" section="Halaman 318" title="Apa yang dimaksud avatāra?" subtitle="Perhatikan perbedaan antara bentuk Jepang dan konsep yang diwakilinya." page={318} onSource={onSource}>
     <div className="avatara-hero"><span lang="ja">アヴァターラ</span><ArrowDown size={28}/><strong>avatāra</strong><small>“TURUN” / MANIFESTASI ILAHI</small></div>
-    <QuoteCard japanese="神の化身は神の国から降って、この世に誕生する。" translation="Manifestasi Tuhan turun dari alam Tuhan dan lahir di dunia ini." page={318} onSource={onSource} compact/>
-    <div className="jp-concepts"><span><b lang="ja">化身</b><small>perwujudan</small></span><span><b lang="ja">降臨</b><small>turun secara ilahi</small></span><span><b lang="ja">出現</b><small>kemunculan</small></span></div>
+    <QuoteCard japanese={<><ruby>神<rt>かみ</rt></ruby>の<ruby>化身<rt>けしん</rt></ruby>は<ruby>神<rt>かみ</rt></ruby>の<ruby>国<rt>くに</rt></ruby>から<ruby>降<rt>くだ</rt></ruby>って、この<ruby>世<rt>よ</rt></ruby>に<ruby>誕生<rt>たんじょう</rt></ruby>する。</>} translation="Manifestasi Tuhan turun dari alam Tuhan dan lahir di dunia ini." page={318} onSource={onSource} compact/>
+    <div className="jp-concepts"><span><b lang="ja"><ruby>化身<rt>けしん</rt></ruby></b><small>perwujudan</small></span><span><b lang="ja"><ruby>降臨<rt>こうりん</rt></ruby></b><small>turun secara ilahi</small></span><span><b lang="ja"><ruby>出現<rt>しゅつげん</rt></ruby></b><small>kemunculan</small></span></div>
     <div className="inline-note"><SourceBadge kind="interpretation"/> <span><em>ava-</em> mengarah pada gagasan “ke bawah”; istilah “inkarnasi” perlu dibaca sesuai konteks teologinya.</span></div>
   </SlideFrame>;
 }
@@ -138,8 +138,8 @@ function TypesSlide({ onSource }: SlideProps) {
 
 function KaliSlide({ onSource }: SlideProps) {
   return <SlideFrame number="14" section="Tradisi" title="Kali-yuga & saṅkīrtana" subtitle="Dari klasifikasi zaman ke praktik yang ditekankan dalam komentar." page={318} onSource={onSource}>
-    <div className="kali-flow"><div><span lang="ja">カリ時代</span><strong>Kali-yuga</strong><small>zaman / era</small></div><ArrowRight/><div><span lang="ja">チャイタンニャ・マハープラブ</span><strong>Caitanya Mahāprabhu</strong><small>mahā = agung · prabhu = tuan</small></div><ArrowRight/><div><span lang="ja">サンキールタン</span><strong>saṅkīrtana</strong><small>pelantunan kolektif</small></div></div>
-    <div className="kali-quote"><SourceBadge kind="commentary"/><span lang="ja">「聖名の集合詠唱」</span><strong>Pelantunan nama suci secara bersama.</strong></div>
+    <div className="kali-flow"><div><span lang="ja">カリ<ruby>時代<rt>じだい</rt></ruby></span><strong>Kali-yuga</strong><small>zaman / era</small></div><ArrowRight/><div><span lang="ja">チャイタンニャ・マハープラブ</span><strong>Caitanya Mahāprabhu</strong><small>mahā = agung · prabhu = tuan</small></div><ArrowRight/><div><span lang="ja">サンキールタン</span><strong>saṅkīrtana</strong><small>pelantunan kolektif</small></div></div>
+    <div className="kali-quote"><SourceBadge kind="commentary"/><span lang="ja">「<ruby>聖名<rt>せいめい</rt></ruby>の<ruby>集合詠唱<rt>しゅうごうえいしょう</rt></ruby>」</span><strong>Pelantunan nama suci secara bersama.</strong></div>
     <Annotation>Hubungan Caitanya Mahāprabhu dengan avatāra pada Kali-yuga dipaparkan menurut perspektif teologis Vaiṣṇava dalam komentar buku.</Annotation>
   </SlideFrame>;
 }
@@ -173,7 +173,7 @@ function ConclusionSlide() {
 }
 
 function ThanksSlide({ onJump }: SlideProps) {
-  return <article className="slide thanks-slide"><div className="slide-masthead"><span>BG / 4.8</span><span>END / 18</span></div><div className="thanks-content"><span className="thanks-ornament" aria-hidden="true">✦</span><h1 lang="ja">ありがとうございました</h1><p>Terima kasih</p><div className="thanks-rule"/><span lang="ja">ご質問はありますか。</span><small>Ada pertanyaan?</small></div><button type="button" className="restart" onClick={() => onJump(0)}>ULANGI PRESENTASI <ArrowRight size={18}/></button><div className="thanks-label"><BookOpenText size={18}/> Bhagavad-gītā 4.8 · halaman 316–318</div></article>;
+  return <article className="slide thanks-slide"><div className="slide-masthead"><span>BG / 4.8</span><span>END / 18</span></div><div className="thanks-content"><span className="thanks-ornament" aria-hidden="true">✦</span><h1 lang="ja">ありがとうございました</h1><p>Terima kasih</p><div className="thanks-rule"/><span lang="ja">ご<ruby>質問<rt>しつもん</rt></ruby>はありますか。</span><small>Ada pertanyaan?</small></div><button type="button" className="restart" onClick={() => onJump(0)}>ULANGI PRESENTASI <ArrowRight size={18}/></button><div className="thanks-label"><BookOpenText size={18}/> Bhagavad-gītā 4.8 · halaman 316–318</div></article>;
 }
 
 export const slides: SlideDefinition[] = [
@@ -187,7 +187,7 @@ export const slides: SlideDefinition[] = [
   {title:'Halaman 317',component:Page317Slide,speakerNotes:'Komentar menekankan motif penghiburan dan pemenuhan harapan para penyembah. Tunjukkan rangkaian istilah Jepang di bagian bawah slide.'},
   {title:'Prahlāda, Devakī, dan Kaṁsa',component:CharactersSlide,speakerNotes:'Contoh Prahlāda dan Devakī memperlihatkan konsep perlindungan dalam narasi. Kutipan Devakī diambil sebagai cuplikan dari halaman 317.'},
   {title:'Kutipan Bengali',component:BengaliSlide,speakerNotes:'Bacaan empat baris ini adalah Bengali dengan banyak unsur Sanskerta. Buku menautkannya ke Caitanya-caritāmṛta Madhya 20.263–264. Jangan menyebutnya Sanskerta murni.'},
-  {title:'Halaman 318',component:Page318Slide,speakerNotes:'Bedakan 化身, 降臨, dan 出現. Penjelasan avatāra sebagai “turun” adalah ringkasan konsep; istilah inkarnasi tidak selalu setara sempurna.'},
+  {title:'Halaman 318',component:Page318Slide,speakerNotes:'Bedakan istilah Jepang yang berarti perwujudan, turunnya manifestasi ilahi, dan kemunculan. Penjelasan avatāra sebagai “turun” adalah ringkasan konsep; istilah inkarnasi tidak selalu setara sempurna.'},
   {title:'Bhagavān',component:BhagavanSlide,speakerNotes:'Jelaskan bentuk katakana dan IAST. Pemecahan bhaga dan -vān di slide merupakan penyederhanaan, bukan analisis etimologis menyeluruh.'},
   {title:'Jenis avatāra',component:TypesSlide,speakerNotes:'Halaman 318 menyebut beberapa klasifikasi. Kartu dapat diklik; tekankan bahwa istilah terkait fungsi, zaman, atau bentuk manifestasi berbeda.'},
   {title:'Kali-yuga dan saṅkīrtana',component:KaliSlide,speakerNotes:'Terangkan Kali-yuga, Caitanya Mahāprabhu, dan saṅkīrtana. Hubungan teologisnya adalah pandangan Vaiṣṇava dalam komentar buku.'},

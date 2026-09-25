@@ -1,0 +1,15 @@
+.slide ruby {
+  ruby-position: over;
+}
+
+.slide rt {
+  font-family: "Noto Sans JP", "Yu Gothic", sans-serif;
+  font-size: 0.36em;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.source-badge rt {
+  font-size: 7px;
+}

@@ -5,19 +5,19 @@ export type SourceKind = 'gita' | 'commentary' | 'bengali' | 'interpretation';
 
 const sourceLabels: Record<SourceKind, string> = {
   gita: 'GĪTĀ 4.8',
-  commentary: '日本語解説',
+  commentary: 'COMMENTARY',
   bengali: 'BENGALI / SANSKRIT TERMS',
   interpretation: 'INTERPRETASI',
 };
 
 export function SourceBadge({ kind }: { kind: SourceKind }) {
-  return <span className={`source-badge source-${kind}`}>{sourceLabels[kind]}</span>;
+  return <span className={`source-badge source-${kind}`}>{kind === 'commentary' ? <span lang="ja"><ruby>日本語<rt>にほんご</rt></ruby><ruby>解説<rt>かいせつ</rt></ruby></span> : sourceLabels[kind]}</span>;
 }
 
 export function SlideFrame({ number, section, title, subtitle, page, onSource, children, className = '' }: {
   number: string;
   section: string;
-  title: string;
+  title: ReactNode;
   subtitle?: string;
   page?: 316 | 317 | 318;
   onSource?: (page: 316 | 317 | 318) => void;
@@ -41,7 +41,7 @@ export function SlideFrame({ number, section, title, subtitle, page, onSource, c
 }
 
 export function QuoteCard({ japanese, translation, page, kind = 'commentary', onSource, compact = false }: {
-  japanese: string;
+  japanese: ReactNode;
   translation: string;
   page: 316 | 317 | 318;
   kind?: SourceKind;
