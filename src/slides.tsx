@@ -10,7 +10,6 @@ const members = [
   ['Faiz Syihab', '125241046'],
   ['Brama Alifio Gusnanda', '125141057'],
   ['Nisrina Humayra', '125241070'],
-  ['Lunetta Aisha Majida', '125241092'],
   ['Raffa Joeta Ilham Arrahman', '125241093'],
 ];
 
@@ -29,7 +28,7 @@ function TitleSlide() {
 
 function MembersSlide() {
   return <SlideFrame number="02" section="Kelompok" title="Anggota kelompok" className="members-slide">
-    <div className="members-intro"><p>Lima anggota,<br/>satu ruang untuk belajar.</p><div className="loop-symbol" aria-hidden="true"><i/><i/><i/><i/><i/></div><small>BAHASA & SASTRA JEPANG</small></div>
+    <div className="members-intro"><p>Empat anggota,<br/>satu ruang untuk belajar.</p><div className="loop-symbol" aria-hidden="true"><i/><i/><i/><i/></div><small>BAHASA & SASTRA JEPANG</small></div>
     <div className="members-list"><div className="member-head"><span>NAMA</span><span>NIM</span></div>{members.map(([name, nim], i) => <div className="member-row" key={nim}><span className="member-index">0{i+1}</span><strong>{name}</strong><span>{nim}</span></div>)}</div>
   </SlideFrame>;
 }
